@@ -17,9 +17,9 @@ describe '#update_quality' do
         let(:name) { 'NORMAL ITEM' }
 
         before do
-          # Verify that this is always true in the current context
-	  # expect inside of before  ???
-          # expect(award.expires_in).to eq(initial_expires_in-1)
+         # Verify that this is always true in the current context
+	       # expect inside of before  ???
+         # expect(award.expires_in).to eq(initial_expires_in-1)
         end
 
         context 'before expiration date' do
@@ -181,9 +181,9 @@ describe '#update_quality' do
 	      
        # before { pending }
         let(:name) { 'Blue Star' }
-#        before do	 
-#	  		award.expires_in.should == initial_expires_in-1 	  
-#		end
+#       before do	 
+#	  		  award.expires_in.should == initial_expires_in-1 	  
+#		    end
 
         context 'before the expiration date' do
           let(:initial_expires_in) { 5 }

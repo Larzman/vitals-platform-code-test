@@ -32,7 +32,7 @@ class Award
       if ['Blue First', 'Blue Compare'].include?(award.name)
         if award.quality < 50
           award.quality += 1
-          if award.name == 'Blue Compare'
+          if award.name.eql? 'Blue Compare'
             if award.expires_in < 6
               award.quality += 2 # by 3
             elsif award.expires_in < 11
@@ -53,7 +53,7 @@ class Award
 
   #
   # update the expires_in experation field.
-  # if experation_in indicates an expired award (by being negative),
+  # if expires_in indicates an expired award (by being negative),
   # then further changes to quality may occur here.
   #
   def upd_expiration
@@ -65,7 +65,7 @@ class Award
         if award.name != 'Blue First'
           if award.name != 'Blue Compare'
             if award.quality > 0
-              if award.name.eql?('Blue Star')
+              if award.name.eql? 'Blue Star'
                 award.quality -= 2
               else
                 award.quality -= 1

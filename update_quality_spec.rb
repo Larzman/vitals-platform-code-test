@@ -1,5 +1,5 @@
 require 'rspec'
-require 'update_quality'
+require 'award'
 
 describe '#update_quality' do
 
@@ -9,7 +9,7 @@ describe '#update_quality' do
     let(:award) { Award.new(name, initial_expires_in, initial_quality) }  
     context 'when quality is updated' do    
       before do
-        update_quality([award])
+        Award.update_quality([award])
       end
 
       context 'given a normal award' do
@@ -182,8 +182,8 @@ describe '#update_quality' do
        # before { pending }
         let(:name) { 'Blue Star' }
 #        before do	 
-#	  award.expires_in.should == initial_expires_in-1 	  
-#	end
+#	  		award.expires_in.should == initial_expires_in-1 	  
+#		end
 
         context 'before the expiration date' do
           let(:initial_expires_in) { 5 }
@@ -235,7 +235,7 @@ describe '#update_quality' do
 
     context 'when quality is updated' do
       before do
-        update_quality(awards)
+        Award.update_quality(awards)
       end
 
       specify { expect(awards[0].quality).to eq(9) }
